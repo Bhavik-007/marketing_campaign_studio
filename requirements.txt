@@ -1,0 +1,12 @@
+streamlit
+ollama
+pandas
+openpyxl
+python-docx
+pypdf
+requests
+python-dotenv
+elasticsearch>=8,<9
+pyodbc
+langgraph
+langgraph-checkpoint-sqlite

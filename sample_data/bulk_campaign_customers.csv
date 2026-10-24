@@ -1,0 +1,3 @@
+customer_id,first_name,last_name,email,marketing_consent,unsubscribed,segment,city
+CUST-1001,Bhavik ,Dave,davebhavik18@gmail.com,yes,no,Premium,Mumbai
+CUST-1002,Dave,Bhavik,davebhavik18@outlook.com,yes,no,Premium,Bengaluru

@@ -1,0 +1,266 @@
+2026-10-18 20:45:52,245 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:45:52,249 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 72}
+2026-10-18 20:45:52,925 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "2AKVT6EB9DCALugAYQMr", "created_index": false, "source_file_count": 1}
+2026-10-18 20:45:52,926 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "2AKVT6EB9DCALugAYQMr"}
+2026-10-18 20:46:15,633 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:46:25,673 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:46:53,942 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-18 20:47:04,567 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:47:09,356 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:47:18,018 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-18 20:47:49,208 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:48:14,352 INFO marketing_campaign_studio: Campaign email sent successfully | details={"recipient": "davebhavik18@gmail.com", "subject": "Discover the Delicious Variety of Colgate Toothpaste"}
+2026-10-18 20:53:49,015 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:54:15,572 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-18 20:54:20,512 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:54:45,817 INFO marketing_campaign_studio: Campaign email sent successfully | details={"recipient": "davebhavik18@gmail.com", "subject": "Discover the Delicious Variety of Colgate Toothpaste"}
+2026-10-18 20:58:49,425 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:58:49,427 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 72}
+2026-10-18 20:58:50,403 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "3QKhT6EB9DCALugAPQMh", "created_index": false, "source_file_count": 1}
+2026-10-18 20:58:50,405 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "3QKhT6EB9DCALugAPQMh"}
+2026-10-18 20:59:18,745 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:59:30,532 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:59:45,892 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:59:48,981 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-18 20:59:49,026 INFO marketing_campaign_studio: Elasticsearch campaign search succeeded | details={"query": "Create Colgate toothpaste", "result_count": 1}
+2026-10-20 19:16:10,955 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:16:42,856 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:16:42,860 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 140}
+2026-10-20 19:16:43,382 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "zTqQWaEBEL9FBwP9dqXq", "created_index": false, "source_file_count": 1}
+2026-10-20 19:16:43,385 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "zTqQWaEBEL9FBwP9dqXq"}
+2026-10-20 19:16:53,068 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:16:59,486 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:17:07,566 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:17:25,445 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:17:27,873 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:17:27,966 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:18:01,770 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-20 19:18:59,093 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:19:09,557 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:19:14,668 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:19:23,157 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-20 19:19:53,424 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:32:56,263 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-20 19:33:08,413 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:33:23,358 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:33:23,361 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 140}
+2026-10-20 19:33:23,971 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "zjqfWaEBEL9FBwP9vaUl", "created_index": false, "source_file_count": 1}
+2026-10-20 19:33:23,974 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "zjqfWaEBEL9FBwP9vaUl"}
+2026-10-20 19:33:31,925 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:33:36,952 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:33:41,749 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:33:58,529 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:33:58,622 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:34:30,265 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-20 19:34:55,242 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:35:02,376 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:35:05,792 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:35:23,358 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-20 19:35:48,472 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:40:14,421 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:40:18,004 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:40:18,007 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 140}
+2026-10-20 19:40:18,308 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "zzqmWaEBEL9FBwP9D6XJ", "created_index": false, "source_file_count": 1}
+2026-10-20 19:40:18,309 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "zzqmWaEBEL9FBwP9D6XJ"}
+2026-10-20 19:40:25,568 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-20 19:40:25,576 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:40:29,769 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:40:32,943 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-20 19:40:32,953 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-20 19:40:39,279 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:23:41,047 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-24 18:24:01,379 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:24:20,059 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:24:37,503 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:24:39,739 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:24:40,040 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:24:40,051 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 43}
+2026-10-24 18:24:40,751 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "4tL6baEBFVoKYurXTHJl", "created_index": false, "source_file_count": 1}
+2026-10-24 18:24:40,756 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "4tL6baEBFVoKYurXTHJl"}
+2026-10-24 18:25:01,414 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:25:09,555 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:25:20,628 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:25:26,918 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:25:35,962 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:25:42,870 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:26:17,447 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-24 18:26:25,000 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:26:49,168 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:26:54,326 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:26:57,604 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:27:06,342 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-24 18:27:25,952 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:27:26,521 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:27:51,484 INFO marketing_campaign_studio: Campaign email sent successfully | details={"recipient": "davebhavik18@gmail.com", "subject": "Fresh Start with Our Seasonal Toothpaste Offer"}
+2026-10-24 18:28:50,928 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:31:47,865 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:31:51,076 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:39:49,518 ERROR asyncio: Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Python314\Lib\asyncio\events.py", line 94, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\asyncio\proactor_events.py", line 166, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-10-24 18:44:08,437 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:44:23,101 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:44:29,195 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:44:34,770 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:44:37,151 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:47:32,445 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:53:52,621 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:54:03,604 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:54:23,487 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:54:24,396 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 18:54:25,337 INFO marketing_campaign_studio: Campaign approved by human | details={"campaign_id": "BULK-20261024-11DD21CB", "approved_by": "Bulk delivery confirmation"}
+2026-10-24 18:54:35,302 INFO marketing_campaign_studio: Simplified bulk delivery completed | details={"campaign_id": "BULK-20261024-11DD21CB", "sent": 2, "failed": 0}
+2026-10-24 19:04:26,058 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:13:30,921 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:13:37,365 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:13:41,412 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:18:51,148 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:18:59,619 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:19:00,447 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:19:08,217 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:19:08,749 ERROR marketing_campaign_studio: Simplified bulk delivery failed | details={"campaign_id": "BULK-20261024-35AEE851", "error": "('23000', \"[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot insert the value NULL into column 'CreatedAt', table 'Marketing.dbo.EmailCampaigns'; column does not allow nulls. INSERT fails. (515) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)\")"}
+Traceback (most recent call last):
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 1483, in <module>
+    upsert_campaign_record(campaign_id, "Bulk delivery", bulk_subject, bulk_body)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 448, in upsert_campaign_record
+    cursor.execute(
+    ~~~~~~~~~~~~~~^
+        """INSERT INTO dbo.EmailCampaigns (CampaignID, Subject, Status)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           VALUES (?, ?, 'PENDING')""",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        campaign_id, subject_template[:500],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot insert the value NULL into column 'CreatedAt', table 'Marketing.dbo.EmailCampaigns'; column does not allow nulls. INSERT fails. (515) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-10-24 20:20:07,411 ERROR marketing_campaign_studio: Bulk customer file validation failed | details={"error": "name 're' is not defined"}
+Traceback (most recent call last):
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 1400, in <module>
+    customers = normalize_customer_file(customer_file)
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 585, in normalize_customer_file
+    re.sub(r"[^a-z0-9]+", "_", str(col).strip().lower()).strip("_")
+    ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+2026-10-24 20:20:18,202 ERROR marketing_campaign_studio: Bulk customer file validation failed | details={"error": "name 're' is not defined"}
+Traceback (most recent call last):
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 1400, in <module>
+    customers = normalize_customer_file(customer_file)
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 585, in normalize_customer_file
+    re.sub(r"[^a-z0-9]+", "_", str(col).strip().lower()).strip("_")
+    ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+2026-10-24 20:20:49,460 ERROR marketing_campaign_studio: Bulk customer file validation failed | details={"error": "name 're' is not defined"}
+Traceback (most recent call last):
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 1400, in <module>
+    customers = normalize_customer_file(customer_file)
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 585, in normalize_customer_file
+    re.sub(r"[^a-z0-9]+", "_", str(col).strip().lower()).strip("_")
+    ^^
+NameError: name 're' is not defined. Did you forget to import 're'?
+2026-10-24 20:26:58,572 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:27:01,702 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:27:01,704 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 140}
+2026-10-24 20:27:02,737 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "49JqbqEBFVoKYurXSXJE", "created_index": false, "source_file_count": 1}
+2026-10-24 20:27:02,739 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "49JqbqEBFVoKYurXSXJE"}
+2026-10-24 20:27:13,329 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:27:17,419 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:27:22,770 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:27:24,328 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:27:51,971 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-24 20:28:21,255 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:28:27,625 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-24 20:29:04,425 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:29:08,218 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:29:09,139 ERROR marketing_campaign_studio: Simplified bulk delivery failed | details={"campaign_id": "BULK-20261024-46D4C0A8", "error": "('23000', \"[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot insert the value NULL into column 'CreatedAt', table 'Marketing.dbo.EmailCampaigns'; column does not allow nulls. INSERT fails. (515) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)\")"}
+Traceback (most recent call last):
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 1502, in <module>
+    upsert_campaign_record(campaign_id, "Bulk delivery", bulk_subject, bulk_body)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Bhavik\Live_VS_code\marketing_campaign_studio\app.py", line 449, in upsert_campaign_record
+    cursor.execute(
+    ~~~~~~~~~~~~~~^
+        """INSERT INTO dbo.EmailCampaigns (CampaignID, Subject, Status)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           VALUES (?, ?, 'PENDING')""",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        campaign_id, subject_template[:500],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+pyodbc.IntegrityError: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Cannot insert the value NULL into column 'CreatedAt', table 'Marketing.dbo.EmailCampaigns'; column does not allow nulls. INSERT fails. (515) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-10-24 20:31:40,620 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:31:41,514 INFO marketing_campaign_studio: Campaign approved by human | details={"campaign_id": "BULK-20261024-46D4C0A8", "approved_by": "Bulk delivery confirmation"}
+2026-10-24 20:32:28,872 INFO marketing_campaign_studio: Simplified bulk delivery completed | details={"campaign_id": "BULK-20261024-46D4C0A8", "sent": 2, "failed": 0}
+2026-10-24 20:36:13,215 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:36:15,268 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "Stronger, Whiter, Healthier Smiles.png", "size_bytes": 1918173}
+2026-10-24 20:36:15,386 INFO marketing_campaign_studio: Elasticsearch campaign search succeeded | details={"query": "Colgate", "result_count": 1}
+2026-10-24 20:38:46,888 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-24 20:39:10,602 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "bulk_campaign_customers.csv", "size_bytes": 226}
+2026-10-24 20:39:10,603 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:39:10,603 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_upload_instructions.txt", "size_bytes": 491}
+2026-10-24 20:39:18,138 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "bulk_campaign_customers.csv", "size_bytes": 226}
+2026-10-24 20:39:18,138 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_upload_instructions.txt", "size_bytes": 491}
+2026-10-24 20:39:19,411 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_upload_instructions.txt", "size_bytes": 491}
+2026-10-24 20:39:24,911 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:39:30,202 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:39:30,205 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 422}
+2026-10-24 20:39:31,083 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "5NJ1bqEBFVoKYurXtXIP", "created_index": false, "source_file_count": 1}
+2026-10-24 20:39:31,085 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "5NJ1bqEBFVoKYurXtXIP"}
+2026-10-24 20:40:02,676 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:40:06,073 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:40:06,077 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 422}
+2026-10-24 20:40:07,146 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "5dJ2bqEBFVoKYurXQXIh", "created_index": false, "source_file_count": 1}
+2026-10-24 20:40:07,148 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "5dJ2bqEBFVoKYurXQXIh"}
+2026-10-24 20:40:11,915 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:40:20,501 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:40:25,406 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:40:33,649 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:41:02,963 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-24 20:41:40,232 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:41:44,136 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:41:54,970 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:41:58,502 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:42:00,942 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:42:09,477 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-24 20:42:15,882 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:42:22,550 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:42:24,463 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_product_facts.csv", "size_bytes": 385}
+2026-10-24 20:42:24,943 INFO marketing_campaign_studio: Campaign approved by human | details={"campaign_id": "BULK-20261024-5C7389F8", "approved_by": "Bulk delivery confirmation"}
+2026-10-24 20:43:12,237 INFO marketing_campaign_studio: Simplified bulk delivery completed | details={"campaign_id": "BULK-20261024-5C7389F8", "sent": 2, "failed": 0}
+2026-10-24 21:23:35,250 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-24 21:23:50,927 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:23:54,551 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:23:54,555 INFO marketing_campaign_studio: Campaign brief prepared | details={"characters": 565}
+2026-10-24 21:23:54,751 INFO marketing_campaign_studio: Campaign document indexed in Elasticsearch | details={"index": "marketing-documents-v1", "document_id": "5tKebqEBFVoKYurXXHKx", "created_index": false, "source_file_count": 1}
+2026-10-24 21:23:54,754 INFO marketing_campaign_studio: Campaign save to Elasticsearch succeeded | details={"document_id": "5tKebqEBFVoKYurXXHKx"}
+2026-10-24 21:24:10,885 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:24:28,859 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:24:35,723 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:24:42,832 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:24:46,625 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:24:48,211 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:25:11,300 INFO marketing_campaign_studio: Creative prompt generation succeeded | details={"model": "llama3.1"}
+2026-10-24 21:26:26,833 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:26:29,262 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:26:36,320 INFO marketing_campaign_studio: Email draft generation succeeded | details={"model": "llama3.1"}
+2026-10-24 21:27:19,340 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:27:36,286 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:27:39,524 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:27:41,837 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:27:44,364 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:27:44,685 INFO marketing_campaign_studio: Campaign approved by human | details={"campaign_id": "BULK-20261024-D857FD5F", "approved_by": "Bulk delivery confirmation"}
+2026-10-24 21:28:24,984 INFO marketing_campaign_studio: Simplified bulk delivery completed | details={"campaign_id": "BULK-20261024-D857FD5F", "sent": 2, "failed": 0}
+2026-10-24 21:30:42,771 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:30:42,771 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_preview.png", "size_bytes": 498721}
+2026-10-24 21:30:45,408 INFO marketing_campaign_studio: Campaign file parsed | details={"file_name": "campaign_pdf_with_image_and_link.pdf", "size_bytes": 2968597}
+2026-10-24 21:37:50,285 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}
+2026-10-24 21:43:43,569 INFO marketing_campaign_studio: Elasticsearch connection test succeeded | details={"status": "yellow"}

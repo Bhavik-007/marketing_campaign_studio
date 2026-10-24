@@ -1,0 +1,10 @@
+Campaign test upload
+
+1. Open the Brief tab in Marketing Campaign Studio.
+2. Upload campaign_brief_fresh_start.md and campaign_product_facts.csv together.
+3. Click Prepare campaign brief.
+4. Optionally save and search the campaign in Elasticsearch.
+5. Open Creative studio to generate an image prompt without uploading a reference image.
+6. Open Email review to generate a customer-ready draft.
+
+All product claims and campaign constraints for this test are contained in the uploaded files.
