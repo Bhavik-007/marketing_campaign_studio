@@ -15,6 +15,10 @@ import requests
 import streamlit as st
 from dotenv import load_dotenv
 
+from agent.document_store import HistoricalDocumentError, archive_uploaded_files, read_archived_file
+from agent.rag import GroundedAnswerError, generate_grounded_answer
+from agent.retrieval import RetrievalError, build_grounding_context, referenced_files, search_historical_documents
+
 load_dotenv()
 
 st.set_page_config(
@@ -29,7 +33,7 @@ st.set_page_config(
 st.html(
     """
     <style>
-    .st-key-brief-banner, .st-key-creative-banner, .st-key-email-banner, .st-key-delivery-banner {
+    .st-key-brief-banner, .st-key-creative-banner, .st-key-email-banner, .st-key-delivery-banner, .st-key-agent-banner {
         border-left-width: 0.35rem !important;
         border-left-style: solid !important;
         border-radius: 0.7rem !important;
@@ -40,6 +44,7 @@ st.html(
     .st-key-creative-banner { border-left-color: #7A5AF8 !important; background: rgba(122, 90, 248, 0.10); }
     .st-key-email-banner { border-left-color: #B7791F !important; background: rgba(183, 121, 31, 0.10); }
     .st-key-delivery-banner { border-left-color: #2F855A !important; background: rgba(47, 133, 90, 0.10); }
+    .st-key-agent-banner { border-left-color: #0F766E !important; background: rgba(15, 118, 110, 0.10); }
     </style>
     """
 )
@@ -97,6 +102,16 @@ SQLSERVER_CONNECTION_STRING = get_sqlserver_connection_string()
 ELASTICSEARCH_URL = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200").strip().rstrip("/")
 ELASTICSEARCH_INDEX = os.getenv("ELASTICSEARCH_INDEX", "marketing-documents-v1").strip()
 ELASTICSEARCH_TIMEOUT = float(os.getenv("ELASTICSEARCH_TIMEOUT", "5"))
+try:
+    AGENT_MAX_HISTORY_MESSAGES = max(4, int(os.getenv("AGENT_MAX_HISTORY_MESSAGES", "24")))
+except ValueError:
+    AGENT_MAX_HISTORY_MESSAGES = 24
+DOCUMENT_ARCHIVE_ROOT = Path(
+    os.getenv(
+        "HISTORICAL_DOCUMENT_STORAGE",
+        str(Path(__file__).resolve().parent / "data" / "historical_documents"),
+    )
+)
 
 logging.basicConfig(
     filename="marketing_campaign_studio.log",
@@ -104,6 +119,10 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
 )
 logger = logging.getLogger("marketing_campaign_studio")
+
+# Streamlit Session State is isolated per browser session. This opaque ID is
+# logged for support correlation only and is never rendered to the user.
+st.session_state.setdefault("historical_agent_session_id", str(uuid.uuid4()))
 
 
 def log_event(level, message, **details):
@@ -148,6 +167,17 @@ def ensure_elasticsearch_index():
                 "extracted_text": {"type": "text"},
                 "created_at": {"type": "date"},
                 "status": {"type": "keyword"},
+                "document_files": {
+                    "properties": {
+                        "document_id": {"type": "keyword"},
+                        "file_name": {"type": "keyword"},
+                        "file_type": {"type": "keyword"},
+                        "mime_type": {"type": "keyword"},
+                        "storage_path": {"type": "keyword", "index": False},
+                        "size_bytes": {"type": "long"},
+                        "uploaded_at": {"type": "date"},
+                    }
+                },
             }
         }
     }
@@ -155,7 +185,7 @@ def ensure_elasticsearch_index():
     return True
 
 
-def index_campaign_document(source_text, source_files=None):
+def index_campaign_document(source_text, source_files=None, document_files=None):
     """Persist parsed campaign content; callers handle failures without blocking the UI."""
     if not source_text or not source_text.strip():
         raise ValueError("There is no campaign content to save to Elasticsearch.")
@@ -164,6 +194,7 @@ def index_campaign_document(source_text, source_files=None):
         "campaign_id": str(uuid.uuid4()),
         "document_type": "campaign_source",
         "source_files": source_files or [],
+        "document_files": document_files or [],
         "extracted_text": source_text.strip(),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "status": "parsed",
@@ -716,6 +747,40 @@ def prepare_bulk_recipients(customers, allow_repeat_delivery=False):
     return email_column, frame[frame["_eligible"]].copy(), frame[~frame["_eligible"]].copy()
 
 
+def render_agent_sources(hits, key_prefix):
+    """Show indexed metadata and safe original-file downloads beneath an agent answer."""
+    if not hits:
+        return
+    with st.expander(f"Retrieved sources ({len(hits)})", expanded=False):
+        for source_position, hit in enumerate(hits, start=1):
+            source = hit.get("_source", {})
+            names = source.get("source_files") or [
+                item.get("file_name", "Unknown file") for item in referenced_files(hit)
+            ]
+            st.markdown(f"**Source {source_position}:** {', '.join(names) or 'Pasted campaign brief'}")
+            st.caption(
+                f"Indexed: {source.get('created_at', 'Unknown date')} · "
+                f"Record ID: {hit.get('_id', 'unknown')}"
+            )
+            for file_position, document in enumerate(referenced_files(hit), start=1):
+                file_name = document.get("file_name", "Unknown file")
+                if document.get("legacy_record"):
+                    st.caption(f"{file_name} - download unavailable because this record predates file archiving.")
+                    continue
+                try:
+                    file_bytes, download_name, mime_type = read_archived_file(document, DOCUMENT_ARCHIVE_ROOT)
+                    st.download_button(
+                        f"Download {download_name}",
+                        data=file_bytes,
+                        file_name=download_name,
+                        mime=mime_type,
+                        icon=":material/download:",
+                        key=f"{key_prefix}_{source_position}_{file_position}",
+                    )
+                except HistoricalDocumentError as exc:
+                    st.caption(f"{file_name} - download unavailable: {exc}")
+
+
 def email_is_valid(value):
     """Basic syntax check; this does not prove that a mailbox exists."""
     import re
@@ -723,9 +788,10 @@ def email_is_valid(value):
 
 
 
-tab_upload, tab_creative, tab_email, tab_send = st.tabs([
+tab_upload, tab_creative, tab_email, tab_send, tab_agent = st.tabs([
     ":material/upload_file: Brief", ":material/palette: Creative studio",
-    ":material/drafts: Email review", ":material/send: Delivery"
+    ":material/drafts: Email review", ":material/send: Delivery",
+    ":material/forum: Conversational AI Agent"
 ])
 
 with tab_upload:
@@ -790,10 +856,14 @@ with tab_upload:
             st.text_area("Extracted / provided content", value=st.session_state["source_text"], height=220)
             try:
                 with st.spinner("Saving campaign document to Elasticsearch..."):
+                    archived_files = archive_uploaded_files(files or [], DOCUMENT_ARCHIVE_ROOT)
                     result, created_index = index_campaign_document(
                         st.session_state["source_text"],
                         st.session_state.get("source_files", []),
+                        document_files=archived_files,
                     )
+                if archived_files:
+                    st.session_state["archived_campaign_files"] = archived_files
                 if created_index:
                     st.success(f"Elasticsearch index `{ELASTICSEARCH_INDEX}` was created.")
                 st.success(f"Campaign data saved to Elasticsearch. Document ID: {result.get('_id', 'saved')}.")
@@ -1636,5 +1706,100 @@ with tab_send:
             log_event("exception", "Bulk customer file validation failed", error=str(exc))
             st.error(f"Could not validate the customer file: {exc}")
 
+with tab_agent:
+    with st.container(key="agent-banner"):
+        st.subheader("Conversational AI Agent", anchor=False)
+        st.caption(
+            "Ask questions about historical campaign records. Responses are grounded only in matching Elasticsearch documents."
+        )
+
+    st.session_state.setdefault("historical_agent_messages", [])
+    agent_messages = st.session_state["historical_agent_messages"]
+    if len(agent_messages) > AGENT_MAX_HISTORY_MESSAGES:
+        del agent_messages[:-AGENT_MAX_HISTORY_MESSAGES]
+    agent_session_id = st.session_state["historical_agent_session_id"]
+    action_col, detail_col = st.columns([1, 4], vertical_alignment="center")
+    with action_col:
+        if st.button("Clear chat", icon=":material/delete_sweep:", key="clear_historical_agent"):
+            st.session_state["historical_agent_messages"] = []
+            st.rerun()
+    with detail_col:
+        st.caption(
+            "Conversation history is private to this browser session. Original-file downloads are available for documents indexed after file archiving was enabled."
+        )
+
+    for message_index, message in enumerate(agent_messages):
+        with st.chat_message(message["role"], avatar=":material/smart_toy:" if message["role"] == "assistant" else None):
+            st.markdown(message["content"])
+            if message["role"] == "assistant":
+                render_agent_sources(message.get("sources", []), f"agent_history_{message_index}")
+
+    suggestions = {
+        "Find the latest campaign brief": "What is the latest campaign brief?",
+        "List historical source files": "Which historical source files are available?",
+        "Show product information": "What product information is available in the historical records?",
+    }
+    selected_suggestion = None
+    if not agent_messages:
+        selected_suggestion = st.pills(
+            "Try asking:",
+            list(suggestions),
+            selection_mode="single",
+            key="historical_agent_suggestion",
+        )
+
+    typed_question = st.chat_input(
+        "Ask about historical campaign documents",
+        key="historical_agent_input",
+        submit_mode="disable",
+    )
+    question = typed_question or suggestions.get(selected_suggestion)
+    if question:
+        user_message = {"role": "user", "content": question}
+        agent_messages.append(user_message)
+        with st.chat_message("user"):
+            st.markdown(question)
+
+        sources = []
+        with st.chat_message("assistant", avatar=":material/smart_toy:"):
+            try:
+                with st.status(":shimmer[Searching historical records]", type="compact") as status:
+                    sources = search_historical_documents(
+                        base_url=ELASTICSEARCH_URL,
+                        index_name=ELASTICSEARCH_INDEX,
+                        timeout=ELASTICSEARCH_TIMEOUT,
+                        query=question,
+                    )
+                    st.write(f"Retrieved {len(sources)} relevant record(s).")
+                    answer = generate_grounded_answer(
+                        question=question,
+                        grounding_context=build_grounding_context(sources),
+                        conversation=agent_messages[:-1],
+                        base_url=OLLAMA_URL,
+                        model=OLLAMA_MODEL,
+                    )
+                    status.update(label="Historical search complete", state="complete")
+                st.markdown(answer)
+                render_agent_sources(sources, f"agent_current_{len(agent_messages)}")
+                agent_messages.append({"role": "assistant", "content": answer, "sources": sources})
+                log_event(
+                    "info",
+                    "Historical agent response generated",
+                    query=question,
+                    source_count=len(sources),
+                    agent_session_id=agent_session_id,
+                )
+            except (RetrievalError, GroundedAnswerError) as exc:
+                answer = f"I could not complete that request: {exc}"
+                st.error(answer)
+                agent_messages.append({"role": "assistant", "content": answer, "sources": []})
+                log_event(
+                    "exception",
+                    "Historical agent request failed",
+                    query=question,
+                    error=str(exc),
+                    agent_session_id=agent_session_id,
+                )
+
 st.divider()
-st.caption("Application status: local Ollama text generation + file text extraction + creative/email drafting + optional Elasticsearch persistence/search + SQL Server campaign/recipient status tracking for bulk email. Bulk delivery requires explicit human approval and SEND_EMAIL=true. Runtime events are written to marketing_campaign_studio.log.")
+st.caption("Application status: local Ollama text generation + file text extraction + creative/email drafting + conversational historical-document agent + optional Elasticsearch persistence/search + SQL Server campaign/recipient status tracking for bulk email. Bulk delivery requires explicit human approval and SEND_EMAIL=true. Runtime events are written to marketing_campaign_studio.log.")

@@ -1,9 +1,13 @@
+# Local application configuration and runtime output
 .env
+.venv/
+*.log
+
+# Original uploads retained for historical-agent downloads may contain sensitive data.
+data/historical_documents/
 .env.*
 !.env.example
-.venv/
-__pycache__/
 venv/
+__pycache__/
 *.py[cod]
-*.log
 .pytest_cache/

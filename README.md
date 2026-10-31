@@ -197,3 +197,77 @@ The PDF's visible purchase URL can be extracted as campaign context. The current
 - Keep `SEND_EMAIL=false` unless you are intentionally testing delivery.
 - When enabling delivery, start with addresses and inboxes you control.
 - Do not enable **Test delivery mode** for real customer campaigns.
+
+## 8. Conversational AI Agent
+
+The application includes an independent **Conversational AI Agent** tab for asking natural-language questions about historical campaign records. Existing brief, creative, email, and delivery workflows remain unchanged.
+
+### Architecture
+
+```text
+Streamlit Conversational AI Agent tab
+        |
+        +-- Session conversation history (multi-turn context)
+        |
+        +-- Elasticsearch lexical retrieval (existing campaign index)
+        |       |
+        |       +-- indexed source text, filenames, dates, and file metadata
+        |
+        +-- Grounded RAG prompt to local Ollama
+        |
+        +-- Retrieved source metadata and archived-file download controls
+```
+
+The feature is intentionally modular:
+
+- `agent/retrieval.py` - Elasticsearch historical-record retrieval and prompt-context assembly.
+- `agent/rag.py` - Ollama prompt construction and grounded answer generation.
+- `agent/document_store.py` - safe local archival and retrieval of original uploaded files.
+- `agent/__init__.py` - package marker.
+
+### How it works
+
+1. Upload campaign source files in the **Brief** tab and choose **Prepare campaign brief**.
+2. The app stores extracted text and file metadata in the configured Elasticsearch index. Newly uploaded originals are also archived locally.
+3. Open **Conversational AI Agent** and ask a question about the historical campaign records.
+4. The agent retrieves matching Elasticsearch records, supplies bounded source context to the local Ollama model, and requires citations such as `[Source 1]` in its answer.
+5. Expand **Retrieved sources** to review metadata and download original files when archival metadata is available.
+
+### File downloads and historical records
+
+- New documents are stored below `data/historical_documents/` by default, using a generated document ID and the original filename.
+- The resulting file metadata is stored with the Elasticsearch campaign record. Path validation prevents a download request from leaving the configured archive root.
+- Records indexed before this feature remain searchable. They show a clear message when original-file download metadata is unavailable.
+- Set `HISTORICAL_DOCUMENT_STORAGE` in `.env` to use another local archive directory. Cloud storage can be added later by replacing the archive adapter in `agent/document_store.py` while retaining the agent UI and Elasticsearch metadata contract.
+
+### Retrieval behavior and safeguards
+
+- The initial implementation uses lexical Elasticsearch retrieval against extracted text and file metadata, which works with the existing index without requiring a vector model or index migration.
+- The retrieval module is isolated so semantic or hybrid Elasticsearch search can replace the query implementation later.
+- The local model is instructed to answer only from retrieved records, cite source numbers, and state when the records do not contain an answer.
+- Conversation context is retained only in the active Streamlit session. Use **Clear chat** to remove it.
+- Retrieval, model, archive, and download errors are handled in the Agent tab and logged through the existing application logger.
+
+### Configuration and dependencies
+
+No new third-party dependency is required. The conversational agent reuses the existing `requests`, Elasticsearch, Ollama, Streamlit, and `langgraph`-compatible Python environment.
+
+```dotenv
+# Optional local archive location for original uploaded files.
+HISTORICAL_DOCUMENT_STORAGE=data/historical_documents
+```
+
+Elasticsearch and Ollama must be available for live historical search and grounded answers. The existing `OLLAMA_URL`, `OLLAMA_MODEL`, `ELASTICSEARCH_URL`, `ELASTICSEARCH_INDEX`, and `ELASTICSEARCH_TIMEOUT` settings remain compatible.
+
+### Multi-user operating model
+
+- Each browser tab receives its own Streamlit Session State. Conversation memory, suggestion selection, and **Clear chat** therefore affect only that user's active session.
+- Agent history is bounded by `AGENT_MAX_HISTORY_MESSAGES` (default: `24`) to prevent an individual long-running conversation from consuming unbounded session memory. Recent turns are retained for follow-up questions.
+- Each uploaded original is archived below a UUID-based directory before its metadata is indexed. Simultaneous uploads with identical filenames therefore do not overwrite one another.
+- Elasticsearch retrieval and Ollama requests are stateless per request, so concurrent users do not share prompts or response state. The application logs an opaque per-session ID for troubleshooting without displaying it in the UI.
+- The historical Elasticsearch index and local document archive are shared knowledge stores. **Before deploying for multiple organizations or access levels, add authentication and server-side authorization filters** so each user can only search and download documents they are permitted to access. Streamlit widget visibility is not an authorization boundary.
+
+```dotenv
+# Optional maximum number of chat messages retained in a browser session.
+AGENT_MAX_HISTORY_MESSAGES=24
+```
